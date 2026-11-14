@@ -1,0 +1,1 @@
+dbname = student_information_db

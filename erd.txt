@@ -1,0 +1,36 @@
+erDiagram
+    TEACHER ||--o{ COURSE : "teaches"
+    STUDENT ||--o{ ENROLLMENT : "places"
+    COURSE ||--o{ ENROLLMENT : "contains"
+
+    TEACHER {
+        int teacher_id PK
+        string first_name
+        string last_name
+        string email
+        string department
+    }
+
+    COURSE {
+        int course_id PK
+        string course_code UK
+        string title
+        int credits
+        int teacher_id FK
+    }
+
+    STUDENT {
+        int student_id PK
+        string first_name
+        string last_name
+        string email
+        date enrollment_date
+    }
+
+    ENROLLMENT {
+        int enrollment_id PK
+        int student_id FK
+        int course_id FK
+        string semester
+        string grade
+    }
